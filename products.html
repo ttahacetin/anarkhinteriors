@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANARKH INTERIORS</title>
+    <style>
+        body {
+            background-color: white;
+            height: 1200px;
+
+        }
+
+
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 380px;
+            width: 55%;
+
+        }
+
+
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTop2 {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+        }
+
+        .text {
+            font-family: serif;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-right: 35px;
+            color: rgb(0, 0, 0);
+            animation: slideFromTop 2.5s forwards;
+            font-family: monospace;
+
+        }
+
+        .text2 {
+            color: azure;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            display: inline-block;
+            font-size: 70px;
+            margin-left: 200px;
+            animation: slideFromLeft 1s forwards;
+            font-family: monospace;
+        }
+
+        .text3 {
+            color: azure;
+            font-size: 25px;
+            opacity: 0;
+            display: inline-block;
+            transition: opacity 0.9s ease;
+            margin-left: 600px;
+            margin-right: 500px;
+            animation: slideFromRight 1s forwards;
+
+        }
+
+
+        @keyframes slideFromLeft {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 200px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            from {
+                margin-left: 200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 700px;
+                margin-right: 300px;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-18px);
+            }
+
+            25% {
+                transform: translateX(18px);
+            }
+
+            50% {
+                transform: translateX(-18px);
+            }
+
+            75% {
+                transform: translateX(18px);
+            }
+
+            100% {
+                transform: translateX(65);
+            }
+        }
+
+        .image {
+            width: 120px;
+            height: 90px;
+            margin-right: 20px;
+            animation: slideFromTop 2s forwards;
+            cursor: pointer;
+        }
+
+        .image2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 500px;
+            width: 800px;
+            opacity: 0.30;
+            margin-left: 30px;
+        }
+
+        .text::before {
+            content: "";
+            position: absolute;
+            top: 33px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: rgb(0, 0, 0);
+            border-radius: 50px;
+            transition: width 0.6s ease;
+
+        }
+
+        .text:hover::before {
+            width: 100%;
+
+        }
+
+
+        .textabout {
+            font-size: 30px;
+            color: azure;
+            margin-left: 100px;
+            margin-top: 200px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .textinteriors {
+            color: azure;
+            font-size: 50px;
+            margin-left: 100px;
+            margin-top: -20px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .texticerik {
+            color: azure;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-right: 900px;
+            margin-top: 50px;
+            animation: slideFromLeft1 1s forwards;
+
+
+        }
+
+        .img2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            opacity: 0.3;
+            margin-left: 800px;
+
+        }
+
+        @keyframes slideFromLeft1 {
+            from {
+                margin-left: -200px;
+                opacity: 1;
+            }
+
+            to {
+                margin-left: 100px;
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 700px;
+            height: 400px;
+            padding: 20px;
+            margin-left: 400px;
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+            overflow: hidden;
+            position: relative;
+            animation: openContainer 1s ease-in-out forwards;
+
+
+        }
+
+
+        @keyframes openContainer {
+            0% {
+                width: 0;
+                /* Başlangıç genişliği 0 */
+                left: 50%;
+                /* Başlangıç pozisyonu orta */
+            }
+
+            50% {
+                width: 350px;
+                /* Yarısına kadar genişlesin */
+                left: 0;
+                /* Soldan başlayarak genişlesin */
+            }
+
+            100% {
+                width: 700px;
+                /* Tam genişlik */
+                left: 0;
+                /* Soldan başlayarak tam genişlik */
+            }
+        }
+
+        .sandalye {
+            height: 300px;
+            width: 500px;
+            margin-top: 10px;
+            margin-left: 190px;
+        }
+
+        .shoptext {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            font-size: 20px;
+            margin-left: 50px;
+            margin-top: 30px;
+            width: 180px;
+            height: 50px;
+            box-shadow: 0 0 10px rgb(89, 128, 83);
+            font-family: monospace;
+        }
+
+        .container2 {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(179, 154, 108, 0.1);
+            flex-direction: row;
+            border-radius: 20px;
+            margin-left: 80px;
+            margin-top: 100px;
+            box-shadow: 1px 1px 10px 1px rgba(187, 145, 110, 0.808);
+
+        }
+
+        model-viewer {
+            width: 290px;
+            height: 290px;
+            border: px solid #ccc;
+            border-radius: 10px;
+
+
+
+        }
+
+        .container3 {
+            display: flex;
+            flex-direction: column;
+
+
+
+        }
+
+        .button {
+            font-size: 40px;
+            margin-left: 92px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        a {
+            position: relative;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.6em;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 10px 30px;
+            transition: 0.5s;
+            margin-left: 80px;
+            margin-top: 20px;
+            font-family: monospace;
+
+        }
+
+        a:hover {
+            background: var(--clr);
+            letter-spacing: 0.25em;
+            box-shadow: 0 0 35px var(--clr);
+        }
+
+        .container4 {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .container5 {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(179, 154, 108, 0.1);
+            flex-direction: row;
+            margin-left: 40px;
+            border-radius: 20px;
+            margin-top: 100px;
+            box-shadow: 1px 1px 10px 1px rgba(187, 145, 110, 0.808);
+
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            margin-top: -10px;
+            background-color: white;
+            z-index: 1000;
+
+        }
+
+        .hr {
+            width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="content">
+            <img class="image" style="margin-left: -170px;" src="./img/anarkhtext.png" alt="anarkh resim"
+                onclick="goToWelcomePage()">
+            <p class="text" onclick="goToProject()">PROJECT</p>
+            <p class="text" onclick="goToAbout()">ABOUT</p>
+            <p class="text" onclick="goToBlog()">PRODUCTS</p>
+            <p class="text" onclick="goToServices()">SERVICES</p>
+            <p class="text" onclick="goToContacts()">CONTACTS</p>
+            <div style="display: block; " class="conta">
+                <p
+                    style="color: black; font-size: 17px; margin-left: 70px; cursor: pointer;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    +05064123928</p>
+                <p
+                    style="color: black; font-size: 17px; margin-left: 160px; margin-bottom: -20px; cursor: pointer;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    anarkhinteriors@gmail.com</p>
+            </div>
+        </div>
+
+        <hr class="hr">
+    </div>
+
+
+
+    <div class="container4">
+
+        <div class="container3">
+            <div class="container2">
+                <model-viewer alt="3D Model" src="./src/untitled.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); " onclick="goToIncele()"><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandaye2.glb" camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); " onclick="goToIncele()"><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye3.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container4">
+
+        <div class="container3">
+            <div class="container2">
+                <model-viewer alt="3D Model" src="./src/sandalye7.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye4.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); " onclick="goToIncele()"><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandaye5.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye6.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container4">
+
+        <div class="container3">
+            <div class="container2">
+                <model-viewer alt="3D Model" src="./src/untitled.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); " onclick="goToIncele()"><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandaye2.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="container5">
+                <model-viewer alt="3D Model" src="./src/sandalye3.glb" auto-rotate camera-controls></model-viewer>
+                <a href="#" style="--clr:rgba(187, 145, 110, 0.808); "><span>incele</span></a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+
+
+    <script>
+
+
+
+        setTimeout(() => {
+            document.querySelector('.left').classList.add('opened');
+            document.querySelector('.right').classList.add('opened');
+        }, 0);
+
+
+        function goToProject() {
+            window.location.href = "project.html";
+        }
+
+        function goToWelcomePage() {
+            window.location.href = "welcomepage.html"
+        }
+
+        function goToAbout() {
+            window.location.href = "about.html"
+        }
+
+        function goToBlog() {
+            window.location.href = "products.html"
+        }
+
+        function goToServices() {
+            window.location.href = "services.html"
+        }
+
+        function goToContacts() {
+            window.location.href = "contacts.html"
+        }
+
+        function goToIncele() {
+            window.location.href = "incele.html"
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

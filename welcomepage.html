@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/anarkhtext.png" type="image/x-icon">
+    <title>ANARKH INTERIORS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+
+            height: 2000px;
+            background-color: white;
+
+
+        }
+
+
+
+
+
+
+        .menu-items {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 380px;
+            width: 55%;
+
+        }
+
+
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTop2 {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+        }
+
+
+
+
+        .menu-item {
+            font-family: serif;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-right: 35px;
+            color: black;
+            text-decoration: none;
+            font-family: monospace;
+            animation: slideFromTop 1s forwards;
+
+
+        }
+
+        .menu-item::before {
+            content: "";
+            position: absolute;
+            top: 33px;
+            left: 0;
+            width: 0;
+            /* Başlangıçta genişlik sıfır */
+            height: 3px;
+            background: black;
+            border-radius: 50px;
+            transition: width 0.6s ease;
+            /* Genişlik değişimine geçiş efekti */
+        }
+
+        .menu-item:hover::before {
+            width: 100%;
+            /* Üzerine gelindiğinde genişlik tamamlandı */
+        }
+
+
+
+
+        .text2 {
+            color: rgb(10, 12, 12);
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            display: inline-block;
+            font-size: 70px;
+            margin-left: 200px;
+            animation: slideFromLeft 1s forwards;
+            font-family: monospace;
+        }
+
+        .text3 {
+            color: rgb(25, 29, 29);
+            font-size: 25px;
+            opacity: 0;
+            display: inline-block;
+            transition: opacity 0.9s ease;
+            margin-left: 600px;
+            margin-right: 500px;
+            animation: slideFromRight 1s forwards;
+
+        }
+
+
+        @keyframes slideFromLeft {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 200px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            from {
+                margin-left: 200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 700px;
+                margin-right: 300px;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-18px);
+            }
+
+            25% {
+                transform: translateX(18px);
+            }
+
+            50% {
+                transform: translateX(-18px);
+            }
+
+            75% {
+                transform: translateX(18px);
+            }
+
+            100% {
+                transform: translateX(65);
+            }
+        }
+
+        .image {
+            width: 120px;
+            height: 90px;
+            margin-right: 20px;
+            animation: slideFromTop 2s forwards;
+            cursor: pointer;
+        }
+
+        .image2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 500px;
+            width: 800px;
+            opacity: 0.7;
+            margin-left: 30px;
+        }
+
+
+        .textabout {
+            font-size: 30px;
+            color: rgb(9, 10, 10);
+            margin-top: 200px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .textinteriors {
+            color: rgb(11, 12, 12);
+            font-size: 50px;
+            margin-top: -20px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .texticerik {
+            color: rgb(23, 26, 26);
+            font-size: 20px;
+            margin-right: 900px;
+            margin-top: 50px;
+            animation: slideFromLeft1 1s forwards;
+
+
+        }
+
+        .img2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 570px;
+            width: 400px;
+            opacity: 3;
+            margin-left: 1000px;
+
+
+        }
+
+        @keyframes slideFromLeft1 {
+            from {
+                margin-left: -200px;
+                opacity: 1;
+            }
+
+            to {
+                margin-left: 100px;
+                opacity: 1;
+            }
+        }
+
+        .tnumber {
+            font-family: serif;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 0px;
+            cursor: pointer;
+            margin-right: 35px;
+            color: black;
+            animation: slideFromTop 2.5s forwards;
+            font-size: 12px;
+
+        }
+
+        .tnumber:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        .tnumber:hover::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        .tnumber:hover::before {
+            width: 0;
+        }
+
+        .tnumber:hover {
+            opacity: 1;
+        }
+
+
+
+        .number-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .number {
+            font-family: monospace;
+            position: relative;
+            color: black;
+            font-size: 70px;
+            margin: 400px 150px 0 -5px;
+
+        }
+
+        .line {
+            width: 160px;
+            margin: 0;
+            border-bottom: 1px solid black;
+        }
+
+        .line2 {
+            width: 225px;
+            margin: 0;
+            border-bottom: 1px solid black;
+        }
+
+        .line3 {
+            width: 250px;
+            margin: 0;
+            border-bottom: 1px solid black;
+        }
+
+        .line4 {
+            width: 305px;
+            margin: 0;
+            border-bottom: 1px solid black;
+        }
+
+        .details {
+            color: black;
+            font-size: 15px;
+            margin-top: 30px;
+            font-family: monospace;
+        }
+
+        .details2 {
+            color: azure;
+            font-size: 21px;
+            margin-top: 30px;
+        }
+
+        .details3 {
+            color: azure;
+            font-size: 21px;
+            margin-top: 30px;
+        }
+
+        .details4 {
+            color: azure;
+            font-size: 21px;
+            margin-top: 27px;
+            margin-left: -40px;
+        }
+
+        .cizgi {
+            width: 1200px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .icon {
+            position: fixed;
+            color: black;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(17, 15, 15, 0.8);
+                padding: 10px;
+                border-radius: 5px;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+            }
+
+            .menu-items.active {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu-item {
+                margin: 10px 0;
+                text-align: left;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: azure;
+                font-size: 30px;
+                margin-top: 20px;
+            }
+
+            .menu-items {
+                position: absolute;
+                top: 60px;
+                right: 20px;
+            }
+
+
+            .image2 {
+                width: 280px;
+                height: 200px;
+            }
+
+
+            .text2 {
+                font-size: 35px;
+                text-align: left;
+                margin: 0;
+                margin-right: 50px;
+
+            }
+
+            .text3 {
+                display: none;
+            }
+
+            .cizgi {
+                width: 300px;
+                margin-right: 200px;
+            }
+
+            .img2 {
+                display: none;
+            }
+
+            .textabout {
+                font-size: 27px;
+
+
+
+            }
+
+            .textinteriors {
+                margin: 0;
+                font-size: 39px;
+                margin-top: 10px;
+            }
+
+            .texticerik {
+                font-size: 20px;
+                margin: 0;
+                padding-left: -30px;
+            }
+
+            .number-container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .number {
+                font-size: 20px;
+            }
+
+            .line,
+            .line2,
+            .line3,
+            .line4 {
+                margin: 5px auto;
+                width: 100px;
+                /* Adjust as needed */
+            }
+        }
+
+        .wrapper .button {
+            position: relative;
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            margin: 0 5px;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease-out;
+            /* Only transition width */
+        }
+
+        .wrapper .button:hover {
+            width: 200px;
+        }
+
+        .wrapper .button .icon {
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            text-align: center;
+            border-radius: 50px;
+            box-sizing: border-box;
+            line-height: 60px;
+        }
+
+        .wrapper .button .icon i {
+            font-size: 25px;
+            transition: color 0.3s ease-out;
+            /* Transition color */
+        }
+
+        .wrapper .button:hover .icon i {
+            color: #fff;
+            /* Change color on hover */
+        }
+
+        .wrapper .button span {
+            position: absolute;
+            left: 70px;
+            /* Initially hidden */
+            top: 0;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 60px;
+            margin-left: 10px;
+            transition: opacity 0.3s ease-out, left 0.3s ease-out;
+            /* Transition opacity and left */
+            opacity: 0;
+            /* Initially hidden */
+        }
+
+        .wrapper .button:hover span {
+            opacity: 1;
+            /* Show on hover */
+            left: 80px;
+            /* Move to the right */
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="header">
+        <div class="menu-items">
+            <img class="image" src="./img/anarkhtext.png" alt="anarkh resim" onclick="goToWelcomePage()">
+            <p class="menu-item" onclick="goToProject()">PROJECT</p>
+            <p class="menu-item" onclick="goToAbout()">ABOUT</p>
+            <p class="menu-item" onclick="goToBlog()">PRODUCTS</p>
+            <p class="menu-item" onclick="goToServices()">SERVICES</p>
+            <p class="menu-item" onclick="goToContacts()">CONTACTS</p>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </div>
+
+
+
+    </div>
+    <hr class="cizgi">
+    <div>
+        <img class="image2" src="img/idesgin.jpg" alt="anarkhresim">
+        <p class="text2">YOUR INTERIOR DESIGN</p>
+        <p class="text3">Comfort is very dependent on the interior design. After all, the house should be cozy, warm and
+            calm. To create such conditions, it is necessary to consider many details that only professionals know
+            about. Our interior design studio will take care of this by finding a balance between functionality, style,
+            and budget.</p>
+    </div>
+
+    <div class="content2">
+        <img class="img2" src="./img/interiorsdesign.jpg" alt="">
+        <p class="textabout">ABOUT</p>
+        <p class="textinteriors">ANARKH INTERIORS</p>
+        <p class="texticerik"> Anarkh Interiors specializes in the architecture and interior design of apartments or
+            houses. The team consists of experienced specialists who do their job with 100% dedication, which affects
+            the result of the work. We consider each client's wishes and individuality, so our projects are exclusive,
+            as evidenced by numerous positive reviews. We know how to create a stylish, modern, and sensual interior to
+            evoke the desired emotions daily. Your home will become a comfortable and convenient place to create, relax,
+            and enjoy life.</p>
+    </div>
+
+    <div class="number-container">
+
+        <div>
+            <p class="number" id="number1">+4</p>
+            <hr class="line">
+            <p class="details">Şirketimizin Yılı</p>
+        </div>
+
+        <div>
+            <p class="number" id="number2">+760</p>
+            <hr class="line2">
+            <p class="details">Eşsiz İç Mekanlar Yaptık</p>
+        </div>
+
+        <div>
+            <p class="number" id="number3">+1052</p>
+            <hr class="line3">
+            <p class="details">Güzel Geri Dönüş</p>
+        </div>
+
+        <div>
+            <p class="number" id="number4">+61921</p>
+            <hr class="line4">
+            <p class="details">Bizim Tarafımızdan Yapılan m2 sayısı</p>
+        </div>
+    </div>
+    <div class="wrapper" style="position: fixed; top: 650px; left: 20px;">
+        <div class="button">
+            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+            <span>Whatsapp</span>
+        </div>
+        
+
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function toggleMenu() {
+            var menuItems = document.querySelector('.menu-items');
+            menuItems.classList.toggle('active');
+        }
+
+        setTimeout(() => {
+            document.querySelector('.left').classList.add('opened');
+            document.querySelector('.right').classList.add('opened');
+        }, 0);
+
+
+        function goToWelcomePage() {
+            window.location.href = "welcomepage.html";
+        }
+
+        function goToProject() {
+            window.location.href = "project.html";
+        }
+
+        function goToAbout() {
+            window.location.href = "about.html"
+        }
+
+        function goToBlog() {
+            window.location.href = "products.html"
+        }
+
+        function goToServices() {
+            window.location.href = "services.html"
+        }
+
+        function goToContacts() {
+            window.location.href = "contacts.html"
+        }
+
+        function openWhatsApp() {
+            var phoneNumber = "+905519392114";
+            window.location.href = "https://wa.me/" + phoneNumber;
+        }
+
+        function openWhatsApp2() {
+            var phoneNumber = "+905064123928";
+            window.location.href = "https://wa.me/" + phoneNumber;
+        }
+
+
+
+        function animateNumbersOnScroll() {
+            const numbers = document.querySelectorAll('.number');
+            const windowHeight = window.innerHeight;
+
+
+            window.addEventListener('scroll', function () {
+                numbers.forEach(numberEl => {
+                    const rect = numberEl.getBoundingClientRect();
+
+                    if (rect.top < windowHeight * 0.8) {
+                        if (!numberEl.classList.contains('animated')) {
+                            animateNumber(numberEl);
+                            numberEl.classList.add('animated');
+                        }
+                    }
+                });
+            });
+        }
+
+        function animateNumber(numberEl) {
+            const target = +numberEl.innerText;
+            const speed = 10000;
+            const duration = 2000;
+            const increment = (target / speed) * 10;
+
+            let current = 0;
+
+            const timer = setInterval(function () {
+                current += increment;
+                numberEl.innerText = "+" + Math.round(current);
+                if (current >= target) {
+                    clearInterval(timer);
+                    numberEl.innerText = "+" + target;
+                }
+            }, duration / speed);
+        }
+
+
+        window.addEventListener('load', animateNumbersOnScroll);
+
+
+    </script>
+</body>
+
+</html>

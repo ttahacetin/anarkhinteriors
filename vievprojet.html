@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANARKH INTERIORS</title>
+    <link rel="shortcut icon" href="img/anarkh.jpg" type="image/x-icon">
+    <style>
+        body {
+
+            height: 100vh;
+            background-color: white;
+
+        }
+
+
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 380px;
+            width: 55%;
+
+        }
+
+
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTop2 {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+        }
+
+        .text {
+            font-family: serif;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-right: 35px;
+            color: rgb(0, 0, 0);
+            animation: slideFromTop 2.5s forwards;
+            font-family: monospace;
+
+        }
+
+        .text::before {
+            content: "";
+            position: absolute;
+            top: 33px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: rgb(0, 0, 0);
+            border-radius: 50px;
+            transition: width 0.6s ease;
+        }
+
+        .text:hover::before {
+            width: 100%;
+        }
+
+        .text.clicked::before {
+            width: 100%;
+        }
+
+        .clicked {
+            border-bottom: 3px solid white;
+        }
+
+        .text2 {
+            color: azure;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            display: inline-block;
+            font-size: 70px;
+            margin-left: 200px;
+            animation: slideFromLeft 1s forwards;
+            font-family: monospace;
+        }
+
+        .text3 {
+            color: azure;
+            font-size: 25px;
+            opacity: 0;
+            display: inline-block;
+            transition: opacity 0.9s ease;
+            margin-left: 600px;
+            margin-right: 500px;
+            animation: slideFromRight 1s forwards;
+
+        }
+
+
+        @keyframes slideFromLeft {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 200px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            from {
+                margin-left: 200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 700px;
+                margin-right: 300px;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-18px);
+            }
+
+            25% {
+                transform: translateX(18px);
+            }
+
+            50% {
+                transform: translateX(-18px);
+            }
+
+            75% {
+                transform: translateX(18px);
+            }
+
+            100% {
+                transform: translateX(65);
+            }
+        }
+
+        .image {
+            width: 120px;
+            height: 90px;
+            margin-right: 20px;
+            animation: slideFromTop 2s forwards;
+            cursor: pointer;
+        }
+
+        .image2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 500px;
+            width: 800px;
+            opacity: 0.30;
+            margin-left: 30px;
+        }
+
+
+
+        .textabout {
+            font-size: 30px;
+            color: azure;
+            margin-left: 100px;
+            margin-top: 200px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .textinteriors {
+            color: azure;
+            font-size: 50px;
+            margin-left: 100px;
+            margin-top: -20px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .texticerik {
+            color: azure;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-right: 900px;
+            margin-top: 50px;
+            animation: slideFromLeft1 1s forwards;
+
+
+        }
+
+        .img2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            opacity: 0.3;
+            margin-left: 800px;
+
+        }
+
+        @keyframes slideFromLeft1 {
+            from {
+                margin-left: -200px;
+                opacity: 1;
+            }
+
+            to {
+                margin-left: 100px;
+                opacity: 1;
+            }
+        }
+
+        .tnumber {
+            color: azure;
+        }
+
+        .contacts-container {
+            margin-top: 40px;
+            float: left;
+            margin-left: 20px;
+
+
+        }
+
+        .contacts-container h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-left: 200px;
+            margin-top: -20px;
+            opacity: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            animation: slideFromTop 1s forwards;
+
+        }
+
+        .contacts-container h1 {
+            font-size: 40px;
+            font-weight: 500;
+            animation: slideFromLeft 1s forwards;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .imagecontainer {
+            display: flex;
+            margin-top: 450px;
+            margin-left: 120px;
+            position: relative;
+        }
+
+        .imagecontainer img {
+            margin-bottom: -300px;
+            margin-left: 50px;
+            height: 520px;
+            width: 570px;
+            transition: transform 0.5s;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+            height: 520px;
+            width: 570px;
+            margin-bottom: -300px;
+            margin-left: 50px;
+        }
+
+        .overlay2 {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+            height: 520px;
+            width: 570px;
+            margin-bottom: -300px;
+            margin-left: 670px;
+        }
+
+        .imagecontainer:hover .overlay {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .imagecontainer:hover .overlay2 {
+            bottom: 0;
+            opacity: 1;
+        }
+
+
+
+        .imagecontainer .overlay button {
+            width: 400px;
+            height: 100px;
+            margin-top: 30%;
+            color: white;
+            font-size: 4vw;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+
+        }
+
+        .imagecontainer .overlay2 button {
+            width: 400px;
+            height: 100px;
+            margin-top: 30%;
+            color: white;
+            font-size: 4vw;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+
+        }
+
+        .imagecontainer .overlay h2 {
+            width: 100%;
+            margin-bottom: -100px;
+            margin-top: 30%;
+            color: white;
+            font-size: 3vw;
+            position: absolute;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .button {
+            background-color: #04AA6D;
+            /* Green */
+            border: none;
+            color: rgb(15, 13, 13);
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+            border: 2px solid #cfb27273;
+        }
+
+        .button1:hover {
+            background-color: #cfb27273;
+            color: rgb(15, 13, 13);
+        }
+
+        .forclients {
+            margin-top: 50px;
+            margin-left: 290px;
+        }
+
+        .p {
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .p1 {
+            margin-top: 15px;
+        }
+
+        .p2 {
+            margin-top: 15px;
+        }
+
+        .wrapper10 {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: -40px;
+        }
+
+        .contacts10 {
+            margin-right: 0px;
+            margin-top: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .p7 {
+            font-size: 25px;
+        }
+
+        .p3 {
+            margin-top: 15px;
+        }
+
+        .p4 {
+            margin-top: 5px;
+        }
+
+        .p5 {
+            margin-top: 5px;
+        }
+
+        .p3:hover {
+            border-bottom: 1px solid black;
+        }
+
+        .contactsicon {
+            margin-right: 290px;
+        }
+
+        .titleju {
+            margin-top: 70px;
+            font-size: 25px;
+        }
+
+        .icon17 {
+            margin-top: 20px;
+            font-size: 29px;
+            position: relative;
+            align-items: center;
+            /* İkonları ve metni dikey olarak hizalar */
+        }
+
+        .icon17 i {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="content">
+        <div class="left"></div>
+        <div class="right"></div>
+        <img class="image" src="./img/anarkhtext.png" alt="anarkh resim" onclick="goToWelcomePage()">
+        <p class="text" onclick="goToProject()">PROJECT</p>
+        <p class="text" onclick="goToAbout()">ABOUT</p>
+        <p class="text" onclick="goToBlog()">PRODUCTS</p>
+        <p class="text" onclick="goToServices()">SERVICES</p>
+        <p class="text" onclick="goToContacts()">CONTACTS</p>
+
+
+    </div>
+    <hr style="width: 1200px;">
+
+
+    <p style="color: azure;">welcome the project</p>
+
+
+    <div class="contacts-container">
+        <h2>2024</h2>
+        <h1>SPACIOUS APARTMENT WITH GUEST ROOMS</h1>
+    </div>
+    
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/1bec7a0196588807.6622374096272.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/2fe945217196588807.662237409669c.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/3dg0af8e6196588807.6622374098d6b.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/6dh126d12196588807.6622374096ae1.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/7sfc9fa0b196588807.6622374098655.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/8sf91d504196588807.6622374095db0.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/91d67e4d196588807.6622373f84e64.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/92c8aa0196588807.6622373f84898.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/10db1b32196588807.6622374097848.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/11fsf2ae430196588807.6622374097e2f.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/11fsf2ae430196588807.6622374097e2f.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/13hf8f76ef196588807.6622374094f36.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <img style="margin-left: 220px;"
+        src="https://bodesstudio.com/wp-content/uploads/2024/04/4hrh9af6c1196588807.6622374095690.jpg" alt="resim 1">
+    <div style="display: flex; justify-content: space-between;" class="img">
+        <img style="height: 700px; width: 500px; margin-left: 220px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/51b812f8d196588807.6622373ee5fbe.jpg" alt="">
+        <img style="height: 700px; width: 500px; margin-right: 233px;"
+            src="https://bodesstudio.com/wp-content/uploads/2024/04/52d814e7196588807.6622373ee6529.jpg" alt="">
+    </div>
+
+
+
+
+    <div class="contacts-container">
+        <h2 style="margin-top: 80px;">OUR</h2>
+        <h1>LAST PROJECT</h1>
+    </div>
+
+    <div class="imagecontainer">
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/04/1bec7a0196588807.6622374096272.jpg" alt="">
+        <div class="overlay">
+            <button onclick="goToView()" class="button button1">View Project</button>
+        </div>
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/04/1fw027803194247363.65f93f8524aad.jpg" alt="">
+        <div class="overlay2">
+            <button class="button button1">View Project</button>
+        </div>
+    </div>
+
+    <div class="imagecontainer">
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/04/1ff2a448196046691.6618d888368bd.jpg" alt="">
+        <div class="overlay">
+            <button class="button button1">View Project</button>
+        </div>
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/04/1h6cc407196044167.6618cc8d74563.jpg" alt="">
+        <div class="overlay2">
+            <button class="button button1">View Project</button>
+        </div>
+    </div>
+
+    <div class="imagecontainer">
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/04/1vdb2b61c5196048161.6618def90b92d.jpg" alt="">
+        <div class="overlay">
+            <button class="button button1">View Project</button>
+        </div>
+        <img src="https://bodesstudio.com/wp-content/uploads/2024/03/1cf5b91193554153.65ee0280e893a.jpg" alt="">
+        <div class="overlay2">
+            <button class="button button1">View Project</button>
+        </div>
+    </div>
+
+    <hr style="width: 1350px; margin-left: 120px; border-width: 2px; margin-top: 400px;">
+    <section>
+        <div class="wrapper10">
+            <div class="forclients">
+                <p class="p">FOR CLIENTS</p>
+                <p class="p1">APPLICATION FOR PAYMENT</p>
+                <p class="p2">PAYMENT
+                <p>
+            </div>
+            <div class="contacts10">
+                <p class="p7">CONTACTS</p>
+                <p class="p3" onclick="">anarkhinteriors@gmail.com</p>
+                <p class="p4" classname="number" onclick="">+905519392114</p>
+                <p class="p5" onclick="">+905064123928</p>
+            </div>
+            <div class="contactsicon">
+                <p class="titleju">JOIN US</p>
+                <div class="icon17">
+                    <i onclick="goToInstagram(); return false;" class="fab fa-instagram"></i>
+                    <i class="fab fa-behance"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+    </section>
+
+    <script src="./countryCodes.js"></script>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <script>
+
+
+
+        function removeClickedClass() {
+            const texts = document.querySelectorAll('.text');
+            texts.forEach(text => text.classList.remove('clicked'));
+        }
+
+        setTimeout(() => {
+            document.querySelector('.left').classList.add('opened');
+            document.querySelector('.right').classList.add('opened');
+        }, 0);
+
+
+        function goToProject() {
+            window.location.href = "project.html";
+        }
+
+        function goToWelcomePage() {
+            window.location.href = "welcomepage.html"
+        }
+        function goToAbout() {
+            window.location.href = "about.html"
+        }
+
+        function goToBlog() {
+            window.location.href = "products.html"
+        }
+
+        function goToServices() {
+            window.location.href = "services.html"
+        }
+
+        function goToContacts() {
+            window.location.href = "contacts.html"
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

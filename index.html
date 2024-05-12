@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anarkh Interiors</title>
+    <link rel="shortcut icon" href="img/anarkhtext.png" type="image/x-icon">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            margin: 0;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            font-family: monospace;
+            font-size: 100px;
+            padding: 70px;
+            position: relative;
+            cursor: pointer;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+
+            25%, 75% {
+                transform: translateX(-18px);
+            }
+
+            50% {
+                transform: translateX(18px);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 data-value="ANARKH INTERIORS" onclick="goToWelcomePage()">ANARKH INTERIORS</h1>
+
+    <script>
+        const letters = "ABCDEFGHIJKLMNOPRSTUVYZ";
+        window.onload = () => {
+            const h1Element = document.querySelector("h1");
+            let repetition = 0;
+            let interval = setInterval(() => {
+                h1Element.innerText = h1Element.dataset.value
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < repetition) {
+                            return h1Element.dataset.value[index];
+                        }
+                        return letters[Math.floor(Math.random() * letters.length)];
+                    })
+                    .join("");
+
+                if (repetition >= h1Element.dataset.value.length) {
+                    clearInterval(interval);
+                }
+
+                repetition += 1;
+            }, 30);
+
+            setTimeout(() => {
+                goToWelcomePage();
+            }, 1000);
+        };
+
+        document.addEventListener('click', function () {
+            goToWelcomePage();
+        });
+
+        function goToWelcomePage() {
+            window.location.href = "welcomepage.html";
+        }
+    </script>
+</body>
+
+</html>

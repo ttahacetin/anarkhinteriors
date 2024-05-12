@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANARKH INTERIORS</title>
+    <link rel="shortcut icon" href="img/anarkh.jpg" type="image/x-icon">
+    <style>
+        body {
+
+            height: 3500px;
+            background-color: white;
+
+        }
+
+
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 380px;
+            width: 55%;
+
+        }
+
+
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTop2 {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+        }
+
+        .text {
+            font-family: serif;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-right: 35px;
+            color: rgb(0, 0, 0);
+            animation: slideFromTop 2.5s forwards;
+            font-family: monospace;
+
+        }
+
+        .text2 {
+            color: azure;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            display: inline-block;
+            font-size: 70px;
+            margin-left: 200px;
+            animation: slideFromLeft 1s forwards;
+            font-family: monospace;
+        }
+
+        .text3 {
+            color: azure;
+            font-size: 25px;
+            opacity: 0;
+            display: inline-block;
+            transition: opacity 0.9s ease;
+            margin-left: 600px;
+            margin-right: 500px;
+            animation: slideFromRight 1s forwards;
+
+        }
+
+
+        @keyframes slideFromLeft {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 200px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            from {
+                margin-left: 200px;
+                opacity: 0;
+            }
+
+            to {
+                margin-left: 700px;
+                margin-right: 300px;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-18px);
+            }
+
+            25% {
+                transform: translateX(18px);
+            }
+
+            50% {
+                transform: translateX(-18px);
+            }
+
+            75% {
+                transform: translateX(18px);
+            }
+
+            100% {
+                transform: translateX(65);
+            }
+        }
+
+        .image {
+            width: 120px;
+            height: 90px;
+            margin-right: 20px;
+            animation: slideFromTop 2s forwards;
+            cursor: pointer;
+        }
+
+        .image2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 500px;
+            width: 800px;
+            opacity: 0.30;
+            margin-left: 30px;
+        }
+
+        .text::before {
+            content: "";
+            position: absolute;
+            top: 33px;
+            left: 0;
+            width: 0;
+            /* Başlangıçta genişlik sıfır */
+            height: 3px;
+            background: rgb(0, 0, 0);
+            border-radius: 50px;
+            transition: width 0.6s ease;
+            /* Genişlik değişimine geçiş efekti */
+        }
+
+        .text:hover::before {
+            width: 100%;
+            /* Üzerine gelindiğinde genişlik tamamlandı */
+        }
+
+        .textabout {
+            font-size: 30px;
+            color: azure;
+            margin-left: 100px;
+            margin-top: 200px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .textinteriors {
+            color: azure;
+            font-size: 50px;
+            margin-left: 100px;
+            margin-top: -20px;
+            animation: slideFromLeft1 1s forwards;
+            font-family: monospace;
+        }
+
+        .texticerik {
+            color: azure;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-right: 900px;
+            margin-top: 50px;
+            animation: slideFromLeft1 1s forwards;
+
+
+        }
+
+        .img2 {
+            vertical-align: middle;
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            opacity: 0.3;
+            margin-left: 800px;
+
+        }
+
+        @keyframes slideFromLeft1 {
+            from {
+                margin-left: -200px;
+                opacity: 1;
+            }
+
+            to {
+                margin-left: 100px;
+                opacity: 1;
+            }
+        }
+
+        .contacts-container {
+            margin-top: 30px;
+            float: left;
+            margin-left: -50px;
+        }
+
+        .contacts-container h2 {
+            font-size: 60px;
+            margin-left: 200px;
+            font-weight: 500;
+            margin-top: 0px;
+            opacity: 0;
+            animation: slideFromTop 1s forwards;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .contacts-container h1 {
+            font-size: 70px;
+            margin-left: 200px;
+            font-weight: 500;
+            margin-top: -20px;
+            opacity: 0;
+            animation: slideFromLeft 1s forwards;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 250px;
+            position: relative;
+            /* Altındaki çizginin pozisyonu için */
+
+        }
+
+        .p1 {
+            font-size: 30px;
+            color: black;
+            margin-left: 100px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .p1:hover {
+            border-bottom: 1px solid black;
+        }
+
+        .p2 {
+            margin-right: 550px;
+            font-size: 30px;
+            opacity: 0.3;
+            cursor: pointer;
+            transition: opacity 0.5s;
+
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+
+        .p2:hover {
+            border-bottom: 1px solid black;
+            opacity: 1;
+        }
+
+        .designdesp {
+            font-size: 22px;
+            margin-left: 560px;
+            margin-right: 100px;
+            display: flex;
+            justify-content: space-around;
+            display: none;
+        }
+
+        .desp-p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .desp-p1 {
+            margin-left: 80px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehturedesp {
+            font-size: 22px;
+            margin-left: 560px;
+            margin-right: 100px;
+            display: flex;
+            justify-content: space-around;
+            display: none;
+        }
+
+        .despi-p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .despi-p1 {
+
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 200px;
+            margin-top: 100px;
+            margin-right: 200px;
+            display: none;
+        }
+
+        .designservice1 {
+            height: 750px;
+            width: 350px;
+            background-color: lightgray;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .designservice1 h3 {
+            color: azure;
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice1 ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 22px;
+            margin-top: 60px;
+            margin-left: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice1 ul li {
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .designservice1 ul li span {
+            margin-right: 10px;
+        }
+
+        .designservice1 h4 {
+            color: azure;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 65px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .send {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .senda {
+            margin-left: 30px;
+            font-size: 25px;
+            font-weight: 522;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .arrow-icon {
+            font-size: 34px;
+            color: #333;
+            margin-left: 40px;
+        }
+
+        .designservice2 {
+            height: 750px;
+            width: 350px;
+            background-color: lightgray;
+        }
+
+        .designservice2 h3 {
+            color: azure;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 55px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice2 ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 22px;
+            margin-top: 70px;
+            margin-left: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice2 ul li {
+            font-size: 22px;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .designservice2 ul li span {
+            margin-right: 10px;
+        }
+
+        .designservice2 h4 {
+            color: azure;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 75px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .send1 {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .senda1 {
+            margin-left: 50px;
+            font-size: 25px;
+            font-weight: 522;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .arrow-icon1 {
+            font-size: 34px;
+            color: #333;
+            margin-left: 40px;
+        }
+
+
+
+        .designservice3 {
+            height: 750px;
+            width: 350px;
+            background-color: lightgray;
+        }
+
+        .designservice3 h3 {
+            color: azure;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 55px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice3 ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 22px;
+            margin-top: 70px;
+            margin-left: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .designservice3 ul li {
+            font-size: 22px;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .designservice3 ul li span {
+            margin-right: 10px;
+        }
+
+        .designservice3 h4 {
+            color: azure;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 75px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice {
+
+            display: flex;
+            justify-content: space-between;
+            margin-left: 200px;
+            margin-top: 100px;
+            margin-right: 200px;
+            display: none;
+        }
+
+        .articehtureservice1 {
+            margin-left: 170px;
+            height: 700px;
+            width: 370px;
+            background-color: gray;
+        }
+
+        .articehtureservice1 h3 {
+            color: azure;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 55px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice1 ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 22px;
+            margin-top: 70px;
+            margin-left: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice1 ul li {
+            font-size: 22px;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .articehtureservice1 ul li span {
+            margin-right: 10px;
+        }
+
+        .articehtureservice1 h4 {
+            color: azure;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 75px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice2 {
+            height: 700px;
+            width: 370px;
+            background-color: gray;
+            margin-right: 170px;
+        }
+
+        .articehtureservice2 h3 {
+            color: azure;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 55px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice2 ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 22px;
+            margin-top: 70px;
+            margin-left: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .articehtureservice2 ul li {
+            font-size: 22px;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .articehtureservice2 ul li span {
+            margin-right: 10px;
+        }
+
+        .articehtureservice2 h4 {
+            color: azure;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 75px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .title {
+            margin-top: 200px;
+            margin-left: 150px;
+            font-size: 34px;
+            margin-right: 900px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .title p {
+            font-size: 20px;
+            margin-top: -28px;
+        }
+
+        .stepview {
+            margin-top: 150px;
+            margin-left: 160px;
+            margin-right: 120px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .step1 {
+            background-color: white;
+            border: 2px solid black;
+            height: 60px;
+            width: 220px;
+
+        }
+
+        .step2 {
+            background-color: white;
+            border: 2px solid black;
+            height: 60px;
+            width: 220px;
+
+        }
+
+        .step3 {
+            background-color: white;
+            border: 2px solid black;
+            height: 60px;
+            width: 220px;
+
+        }
+
+        .step4 {
+            background-color: white;
+            border: 2px solid black;
+            height: 60px;
+            width: 220px;
+
+        }
+
+        .step5 {
+            background-color: white;
+            border: 2px solid black;
+            height: 60px;
+            width: 220px;
+
+        }
+
+        .stepview p {
+            margin-left: 80px;
+            font-size: 25px;
+            margin-top: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+        }
+
+
+
+        .stepcont {}
+
+        .step1cont {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .step1cont p {
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-right: 100px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .step1cont img {
+            margin-top: 70px;
+            margin-left: 150px;
+            height: 400px;
+            width: 1800px;
+        }
+
+        .step2cont {
+            display: flex;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .step2cont p {
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-right: 100px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .step2cont img {
+            margin-top: 70px;
+            margin-left: 150px;
+            height: 400px;
+            width: 1800px;
+        }
+
+        .step3cont {
+            display: flex;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .step3cont p {
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-right: 100px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .step3cont img {
+            margin-top: 70px;
+            margin-left: 150px;
+            height: 400px;
+            width: 1800px;
+        }
+
+        .step4cont {
+            display: flex;
+            justify-content: space-between;
+            display: none;
+
+        }
+
+        .step4cont p {
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-right: 100px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .step4cont img {
+            margin-top: 70px;
+            margin-left: 150px;
+            height: 400px;
+            width: 1800px;
+        }
+
+        .step5cont {
+            display: flex;
+            justify-content: space-between;
+            display: none;
+
+        }
+
+        .step5cont p {
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-right: 100px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .step5cont img {
+            margin-top: 70px;
+            margin-left: 150px;
+            height: 400px;
+            width: 1800px;
+        }
+
+        .form-container {
+            margin-top: 220px;
+        }
+
+        .form {
+            width: 30%;
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+            margin-left: 200px;
+            margin-top: 20px;
+
+        }
+
+        .form input {
+            width: 100%;
+            height: 100%;
+            color: #000000;
+            padding-top: 20px;
+            border: none;
+
+        }
+
+        .form label {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            border-bottom: 1px solid white;
+        }
+
+        .form label::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border-bottom: 3px solid #636363;
+
+        }
+
+        .content-name {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .form input:focus {
+            outline: none;
+        }
+
+        .form input:focus+.label-name .content-name,
+        .form input:valid+.label-name .content-name {
+            transform: translateY(-150%);
+            font-size: 14px;
+            left: 0px;
+            color: #000000;
+        }
+
+        .form input:focus+.label-name::after,
+        .form input:valid+.label-name::after {
+            transform: translateX(0%);
+        }
+
+        .country-select {
+            width: 50px;
+            height: 20px;
+            border-width: 0.2px;
+            border-color: #000000;
+            box-shadow: #636363;
+        }
+
+        .number {
+            margin-top: 20px;
+        }
+
+        .send22 {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .senda22 {
+            margin-left: 200px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .forclients {
+            margin-top: 50px;
+            margin-left: 290px;
+        }
+
+        .p {
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .forclients .p1 {
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        .p2 {
+            margin-top: 15px;
+        }
+
+        .wrapper10 {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: -40px;
+        }
+
+        .contacts10 {
+            margin-right: 0px;
+            margin-top: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .p7 {
+            font-size: 25px;
+        }
+
+        .p3 {
+            margin-top: 15px;
+        }
+
+        .p4 {
+            margin-top: 5px;
+        }
+
+        .p5 {
+            margin-top: 5px;
+        }
+
+        .p3:hover {
+            border-bottom: 1px solid black;
+        }
+
+        .contactsicon {
+            margin-right: 290px;
+        }
+
+        .titleju {
+            margin-top: 70px;
+            font-size: 25px;
+        }
+
+        .icon17 {
+            margin-top: 20px;
+            font-size: 29px;
+            position: relative;
+            align-items: center;
+            /* İkonları ve metni dikey olarak hizalar */
+        }
+
+        .icon17 i {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            margin-top: -250px;
+            background-color: white;
+            z-index: 1000;
+
+        }
+
+        .hr {
+            width: 1200px;
+        }
+    </style> 
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="content">
+            <img class="image" style="margin-left: -170px;" src="./img/anarkhtext.png" alt="anarkh resim"
+                onclick="goToWelcomePage()">
+            <p class="text" onclick="goToProject()">PROJECT</p>
+            <p class="text" onclick="goToAbout()">ABOUT</p>
+            <p class="text" onclick="goToBlog()">PRODUCTS</p>
+            <p class="text" onclick="goToServices()">SERVICES</p>
+            <p class="text" onclick="goToContacts()">CONTACTS</p>
+            <div style="display: block; " class="conta">
+                <p
+                    style="color: black; font-size: 17px; margin-left: 70px; cursor: pointer;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    +05064123928</p>
+                <p
+                    style="color: black; font-size: 17px; margin-left: 160px; margin-bottom: -20px; cursor: pointer;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    anarkhinteriors@gmail.com</p>
+            </div>
+        </div>
+
+        <hr class="hr">
+    </div>
+
+
+    <div style="margin-top: -90px;" class="contacts-container">
+        <h2>OUR</h3>
+            <h1>SERVICES</h1>
+    </div>
+    </div>
+
+    <div class="buttons">
+        <p style="margin-top: 200px;" class="p1" onclick="showDesignParagraphs()">DESIGN</p>
+        <p style="margin-top: 200px;" class="p2" onclick="showArticehtureParagraphs()">ARTICEHTURE</p>
+    </div>
+
+    <div class="designdesp">
+        <p class="desp-p">Bodes Studio offers interior design services. Our team will fill your home with style and
+            create a comfortable design for your everyday life.</p>
+        <p class="desp-p1">We take care of your peace of mind and worry-free planning and execution. First, we'll learn
+            a little more about your lifestyle and find out what you see as your ideal home.</p>
+    </div>
+
+    <div class="articehturedesp">
+        <p class="despi-p">
+            Bodes Studio offers architectural solutions for you. All you have to do is tell us your thoughts on the
+            appearance of the building and we will create a modern solution for you.
+        </p>
+        <p class="despi-p1">
+            We can easily take care of the exterior and architecture of your home according to your preferences. In
+            addition to the appearance of the room, we will also model the most convenient layout.
+        </p>
+    </div>
+
+
+    <div class="designservice">
+        <div class="designservice1">
+            <h3 style="color: black;">LAYOUT WITH FURNITURE</h3>
+            <ul>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Layout with furniture</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> Design consept</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> 3D visualization</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> List of materiak and furnishings</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> Materials calculation</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> Techinval documentation</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> Design supervision</li>
+            </ul>
+            <h4>12$ m2</h4>
+            <div class="send">
+                <p class="senda">ORDER THE KIT</p>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+        </div>
+        <div class="designservice2">
+            <h3 style="color: black;">FULL INTERIOR DESIGN PROJECT</h3>
+            <ul>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Layout with furniture</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Design consept</li>
+                <li style="color: azure;"><span style="color: azure;"> &#10003;</span> 3D visualization</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> List of materiak and furnishings
+                </li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Materials calculation</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Techinval documentation</li>
+                <li style="color: darkgrey;"><span>&#10005;</span> Design supervision</li>
+            </ul>
+            <h4>45$ m2</h4>
+            <div class="send1">
+                <p class="senda1">ORDER THE KIT</p>
+                <i class="fas fa-arrow-right arrow-icon1"></i>
+            </div>
+        </div>
+        <div class="designservice3">
+            <h3 style="color: black;">INTERIOR DESIGN WITH SUPERVISION</h3>
+            <ul style="margin-top: -10px;">
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Layout with furniture</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Design consept</li>
+                <li style="color: azure;"><span style="color: azure;"> &#10003;</span> 3D visualization</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> List of materiak and furnishings
+                </li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Materials calculation</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Techinval documentation</li>
+                <li style="color: azure;"><span>&#10003;</span> Design supervision</li>
+            </ul>
+            <h4>85$ m2</h4>
+            <div class="send1">
+                <p class="senda1">ORDER THE KIT</p>
+                <i class="fas fa-arrow-right arrow-icon1"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="articehtureservice">
+        <div class="articehtureservice1">
+            <h3 style="color: black;">EXTERIOR VISULALISATION</h3>
+            <ul>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Design Consept</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> 3D visualization</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> List of materials and lights</li>
+                <li style="color: lightgray;"><span style="color: lightgray;">&#10005;</span> Layout with furniture</li>
+                <li style="color: lightgray;"><span style="color: lightgray;">&#10005;</span> Techinval documentation
+                </li>
+            </ul>
+            <h4>600$</h4>
+            <div class="send1">
+                <p class="senda1">ORDER THE KIT</p>
+                <i class="fas fa-arrow-right arrow-icon1"></i>
+            </div>
+        </div>
+        <div class="articehtureservice2">
+            <h3 style="color: black;">ARCHITECTURE PROJECT</h3>
+            <ul>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Design Consept</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> 3D visualization</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> List of materials and lights</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Layout with furniture</li>
+                <li style="color: azure;"><span style="color: azure;">&#10003;</span> Techinval documentation
+                </li>
+            </ul>
+            <h4>2500$</h4>
+            <div class="send1">
+                <p class="senda1">ORDER THE KIT</p>
+                <i class="fas fa-arrow-right arrow-icon1"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <h3>ALGORITHM OF COOPERATION</h3>
+        <p>WITH OUR DESIGN STUDIO:</p>
+    </div>
+
+    <div class="stepview">
+        <div class="step1">
+            <p style="margin-left: 60px;">1 STAGE</p>
+        </div>
+        <div class="step2">
+            <p style="margin-left: 60px;">2 STAGE</p>
+        </div>
+        <div class="step3">
+            <p style="margin-left: 60px;">3 STAGE</p>
+        </div>
+        <div class="step4">
+            <p style="margin-left: 60px;">4 STAGE</p>
+        </div>
+        <div class="step5">
+            <p style="margin-left: 60px;">5 STAGE</p>
+        </div>
+    </div>
+
+    <div class="stepcont">
+        <div class="step1cont">
+            <img src="https://bodesstudio.com/wp-content/uploads/2023/06/ijvijv7rijfd.jpg" alt="resim1">
+            <p>Acquaintance. How do you feel and see your ideal home? Tell us about your needs, requests and wishes.<br>
+                <i class="fas fa-arrow-left arrow-icon"
+                    style="margin-top: 270px; margin-left: 320px; display: none; "></i>
+                <i id="updateStepButton1" style="margin-top: 270px; margin-left: 400px; cursor: pointer;"
+                    class="fas fa-arrow-right arrow-icon1"></i>
+            </p>
+        </div>
+
+        <div class="step2cont">
+            <img src="https://bodesstudio.com/wp-content/uploads/2023/05/Waldbilin-2.jpg" alt="resim1">
+            <p>Let's get to work.After a dialogue with you we from reference and wait for payment of %50<br>
+                <i id="prevButton" class="fas fa-arrow-left arrow-icon"
+                    style="margin-top: 270px; margin-left: 300px; cursor: pointer;"></i>
+                <i id="updateStepButton" style="cursor: pointer;" class="fas fa-arrow-right arrow-icon1"></i>
+            </p>
+        </div>
+
+        <div class="step3cont">
+            <img style="width: 1400px;"
+                src="https://bodesstudio.com/wp-content/uploads/2023/06/reiogvj4eou3g9u340ug8y43wguw4y45y.jpg"
+                alt="resim1">
+            <p>Modeling of the architectural building and agreement of the model<br>
+                <i id="prevButton" class="fas fa-arrow-left arrow-icon"
+                    style="margin-top: 300px; margin-left: 280px; cursor: pointer;"></i>
+                <i id="updateStepButton" style="cursor: pointer;" id="nextButton"
+                    class="fas fa-arrow-right arrow-icon1"></i>
+            </p>
+        </div>
+
+        <div class="step4cont">
+            <img src="https://bodesstudio.com/wp-content/uploads/2023/06/e4gfujo4tei38u09gty34u90uy0849u259uy5i42uj-1.jpg"
+                alt="resim1">
+            <p>Create 3D visualization.3D design of your house.And so that you can reailze all your ideas<br>
+                <i id="prevButton" class="fas fa-arrow-left arrow-icon"
+                    style="margin-top: 270px; margin-left: 290px; cursor: pointer;"></i>
+                <i id="updateStepButton" style="cursor: pointer;" id="nextButton"
+                    class="fas fa-arrow-right arrow-icon1"></i>
+            </p>
+        </div>
+
+        <div class="step5cont">
+            <img src="https://bodesstudio.com/wp-content/uploads/2023/05/drfnxyjbdtnghjtdnfg.jpg" alt="resim1">
+            <p>After the remainging payment of 50%, our team will develop the final visualization and for you<br>
+                <i id="prevButton" class="fas fa-arrow-left arrow-icon"
+                    style="margin-top: 270px; margin-left: 270px; cursor: pointer;"></i>
+                <i id="updateStepButton" id="nextButton" style="cursor: pointer; display: none;"
+                    class="fas fa-arrow-right arrow-icon1"></i>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="form-container">
+        <div class="form">
+            <input type="text" name="name" autocomplete="off" required />
+            <label for="name" class="label-name">
+                <span class="content-name">Your Name</span>
+            </label>
+        </div>
+
+        <div class="form">
+            <input type="text" name="email" autocomplete="off" required />
+            <label for="email" class="label-name">
+                <span class="content-name">Your Email</span>
+            </label>
+        </div>
+
+        <div class="form">
+
+            <input type="tel" id="phoneNumber" name="phone" autocomplete="off" required />
+            <label for="phone" class="label-name">
+                <span class="content-name1">Your Phone</span>
+            </label>
+
+            <span id="phoneCode"></span>
+            <span id="countryFlag"></span>
+
+        </div>
+
+    </div>
+    <div class="form">
+        <div class="form-control">
+            <select id="countrySelect" class="country-select" onchange="updatePhoneCode()">
+                <option value="AF">Afghanistan</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AS">American Samoa</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AI">Anguilla</option>
+                <option value="AQ">Antarctica</option>
+                <option value="AG">Antigua and Barbuda</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AW">Aruba</option>
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="AZ">Azerbaijan</option>
+                <option value="BS">Bahamas</option>
+                <option value="BH">Bahrain</option>
+                <option value="BD">Bangladesh</option>
+                <option value="BB">Barbados</option>
+                <option value="BY">Belarus</option>
+                <option value="BE">Belgium</option>
+                <option value="BZ">Belize</option>
+                <option value="BJ">Benin</option>
+                <option value="BM">Bermuda</option>
+                <option value="BT">Bhutan</option>
+                <option value="BO">Bolivia</option>
+                <option value="BA">Bosnia and Herzegovina</option>
+                <option value="BW">Botswana</option>
+                <option value="BV">Bouvet Island</option>
+                <option value="BR">Brazil</option>
+                <option value="IO">British Indian Ocean Territory</option>
+                <option value="BN">Brunei Darussalam</option>
+                <option value="BG">Bulgaria</option>
+                <option value="BF">Burkina Faso</option>
+                <option value="BI">Burundi</option>
+                <option value="KH">Cambodia</option>
+                <option value="CM">Cameroon</option>
+                <option value="CA">Canada</option>
+                <option value="CV">Cape Verde</option>
+                <option value="KY">Cayman Islands</option>
+                <option value="CF">Central African Republic</option>
+                <option value="TD">Chad</option>
+                <option value="CL">Chile</option>
+                <option value="CN">China</option>
+                <option value="CX">Christmas Island</option>
+                <option value="CC">Cocos (Keeling) Islands</option>
+                <option value="CO">Colombia</option>
+                <option value="KM">Comoros</option>
+                <option value="CG">Congo</option>
+                <option value="CD">Congo, The Democratic Republic of The</option>
+                <option value="CK">Cook Islands</option>
+                <option value="CR">Costa Rica</option>
+                <option value="CI">Cote D'ivoire</option>
+                <option value="HR">Croatia</option>
+                <option value="CU">Cuba</option>
+                <option value="CY">Cyprus</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="DK">Denmark</option>
+                <option value="DJ">Djibouti</option>
+                <option value="DM">Dominica</option>
+                <option value="DO">Dominican Republic</option>
+                <option value="EC">Ecuador</option>
+                <option value="EG">Egypt</option>
+                <option value="SV">El Salvador</option>
+                <option value="GQ">Equatorial Guinea</option>
+                <option value="ER">Eritrea</option>
+                <option value="EE">Estonia</option>
+                <option value="ET">Ethiopia</option>
+                <option value="FK">Falkland Islands (Malvinas)</option>
+                <option value="FO">Faroe Islands</option>
+                <option value="FJ">Fiji</option>
+                <option value="FI">Finland</option>
+                <option value="FR">France</option>
+                <option value="GF">French Guiana</option>
+                <option value="PF">French Polynesia</option>
+                <option value="TF">French Southern Territories</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambia</option>
+                <option value="GE">Georgia</option>
+                <option value="DE">Germany</option>
+                <option value="GH">Ghana</option>
+                <option value="GI">Gibraltar</option>
+                <option value="GR">Greece</option>
+                <option value="GL">Greenland</option>
+                <option value="GD">Grenada</option>
+                <option value="GP">Guadeloupe</option>
+                <option value="GU">Guam</option>
+                <option value="GT">Guatemala</option>
+                <option value="GN">Guinea</option>
+                <option value="GW">Guinea-bissau</option>
+                <option value="GY">Guyana</option>
+                <option value="HT">Haiti</option>
+                <option value="HM">Heard Island and Mcdonald Islands</option>
+                <option value="VA">Holy See (Vatican City State)</option>
+                <option value="HN">Honduras</option>
+                <option value="HK">Hong Kong</option>
+                <option value="HU">Hungary</option>
+                <option value="IS">Iceland</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IR">Iran, Islamic Republic of</option>
+                <option value="IQ">Iraq</option>
+                <option value="IE">Ireland</option>
+                <option value="IL">Israel</option>
+                <option value="IT">Italy</option>
+                <option value="JM">Jamaica</option>
+                <option value="JP">Japan</option>
+                <option value="JO">Jordan</option>
+                <option value="KZ">Kazakhstan</option>
+                <option value="KE">Kenya</option>
+                <option value="KI">Kiribati</option>
+                <option value="KP">Korea, Democratic People's Republic of</option>
+                <option value="KR">Korea, Republic of</option>
+                <option value="KW">Kuwait</option>
+                <option value="KG">Kyrgyzstan</option>
+                <option value="LA">Lao People's Democratic Republic</option>
+                <option value="LV">Latvia</option>
+                <option value="LB">Lebanon</option>
+                <option value="LS">Lesotho</option>
+                <option value="LR">Liberia</option>
+                <option value="LY">Libyan Arab Jamahiriya</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Lithuania</option>
+                <option value="LU">Luxembourg</option>
+                <option value="MO">Macao</option>
+                <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="MG">Madagascar</option>
+                <option value="MW">Malawi</option>
+                <option value="MY">Malaysia</option>
+                <option value="MV">Maldives</option>
+                <option value="ML">Mali</option>
+                <option value="MT">Malta</option>
+                <option value="MH">Marshall Islands</option>
+                <option value="MQ">Martinique</option>
+                <option value="MR">Mauritania</option>
+                <option value="MU">Mauritius</option>
+                <option value="YT">Mayotte</option>
+                <option value="MX">Mexico</option>
+                <option value="FM">Micronesia, Federated States of</option>
+                <option value="MD">Moldova, Republic of</option>
+                <option value="MC">Monaco</option>
+                <option value="MN">Mongolia</option>
+                <option value="MS">Montserrat</option>
+                <option value="MA">Morocco</option>
+                <option value="MZ">Mozambique</option>
+                <option value="MM">Myanmar</option>
+                <option value="NA">Namibia</option>
+                <option value="NR">Nauru</option>
+                <option value="NP">Nepal</option>
+                <option value="NL">Netherlands</option>
+                <option value="AN">Netherlands Antilles</option>
+                <option value="NC">New Caledonia</option>
+                <option value="NZ">New Zealand</option>
+                <option value="NI">Nicaragua</option>
+                <option value="NE">Niger</option>
+                <option value="NG">Nigeria</option>
+                <option value="NU">Niue</option>
+                <option value="NF">Norfolk Island</option>
+                <option value="MP">Northern Mariana Islands</option>
+                <option value="NO">Norway</option>
+                <option value="OM">Oman</option>
+                <option value="PK">Pakistan</option>
+                <option value="PW">Palau</option>
+                <option value="PS">Palestinian Territory, Occupied</option>
+                <option value="PA">Panama</option>
+                <option value="PG">Papua New Guinea</option>
+                <option value="PY">Paraguay</option>
+                <option value="PE">Peru</option>
+                <option value="PH">Philippines</option>
+                <option value="PN">Pitcairn</option>
+                <option value="PL">Poland</option>
+                <option value="PT">Portugal</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="QA">Qatar</option>
+                <option value="RE">Reunion</option>
+                <option value="RO">Romania</option>
+                <option value="RU">Russian Federation</option>
+                <option value="RW">Rwanda</option>
+                <option value="SH">Saint Helena</option>
+                <option value="KN">Saint Kitts and Nevis</option>
+                <option value="LC">Saint Lucia</option>
+                <option value="PM">Saint Pierre and Miquelon</option>
+                <option value="VC">Saint Vincent and The Grenadines</option>
+                <option value="WS">Samoa</option>
+                <option value="SM">San Marino</option>
+                <option value="ST">Sao Tome and Principe</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="SN">Senegal</option>
+                <option value="CS">Serbia and Montenegro</option>
+                <option value="SC">Seychelles</option>
+                <option value="SL">Sierra Leone</option>
+                <option value="SG">Singapore</option>
+                <option value="SK">Slovakia</option>
+                <option value="SI">Slovenia</option>
+                <option value="SB">Solomon Islands</option>
+                <option value="SO">Somalia</option>
+                <option value="ZA">South Africa</option>
+                <option value="GS">South Georgia and The South Sandwich Islands</option>
+                <option value="ES">Spain</option>
+                <option value="LK">Sri Lanka</option>
+                <option value="SD">Sudan</option>
+                <option value="SR">Suriname</option>
+                <option value="SJ">Svalbard and Jan Mayen</option>
+                <option value="SZ">Swaziland</option>
+                <option value="SE">Sweden</option>
+                <option value="CH">Switzerland</option>
+                <option value="SY">Syrian Arab Republic</option>
+                <option value="TW">Taiwan, Province of China</option>
+                <option value="TJ">Tajikistan</option>
+                <option value="TZ">Tanzania, United Republic of</option>
+                <option value="TH">Thailand</option>
+                <option value="TL">Timor-leste</option>
+                <option value="TG">Togo</option>
+                <option value="TK">Tokelau</option>
+                <option value="TO">Tonga</option>
+                <option value="TT">Trinidad and Tobago</option>
+                <option value="TN">Tunisia</option>
+                <option value="TR">Turkey</option>
+                <option value="TM">Turkmenistan</option>
+                <option value="TC">Turks and Caicos Islands</option>
+                <option value="TV">Tuvalu</option>
+                <option value="UG">Uganda</option>
+                <option value="UA">Ukraine</option>
+                <option value="AE">United Arab Emirates</option>
+                <option value="US">United States</option>
+                <option value="UM">United States Minor Outlying Islands</option>
+                <option value="UY">Uruguay</option>
+                <option value="UZ">Uzbekistan</option>
+                <option value="VU">Vanuatu</option>
+                <option value="VE">Venezuela</option>
+                <option value="VN">Viet Nam</option>
+                <option value="VG">Virgin Islands, British</option>
+                <option value="VI">Virgin Islands, U.S.</option>
+                <option value="WF">Wallis and Futuna</option>
+                <option value="EH">Western Sahara</option>
+                <option value="YE">Yemen</option>
+                <option value="ZM">Zambia</option>
+                <option value="ZW">Zimbabwe</option>
+
+            </select>
+        </div>
+
+    </div>
+
+    <div class="send22">
+        <p class="senda22">SEND A REQUEST</p>
+        <i style="margin-top: 22px;" class="fas fa-arrow-right arrow-icon"></i>
+    </div>
+
+    <hr style="width: 1300px; margin-left: 130px; border-width: 2px; margin-top: 200px;">
+
+
+    <section>
+        <div class="wrapper10">
+            <div class="forclients">
+                <p class="p">FOR CLIENTS</p>
+                <p class="p1">APPLICATION FOR PAYMENT</p>
+                <p class="p2">PAYMENT
+                <p>
+            </div>
+            <div class="contacts10">
+                <p class="p7">CONTACTS</p>
+                <p class="p3" onclick="">anarkhinteriors@gmail.com</p>
+                <p class="p4" classname="number" onclick="">+905519392114</p>
+                <p class="p5" onclick="">+905064123928</p>
+            </div>
+            <div class="contactsicon">
+                <p class="titleju">JOINUS</p>
+                <div class="icon17">
+                    <i onclick="goToInstagram(); return false;" class="fab fa-instagram"></i>
+                    <i class="fab fa-behance"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+    </section>
+
+    <script src="./countryCodes.js"></script>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function goToProject() {
+            window.location.href = "project.html";
+        }
+
+        function goToWelcomePage() {
+            window.location.href = "welcomepage.html";
+        }
+
+        function goToAbout() {
+            window.location.href = "about.html";
+        }
+
+        function goToBlog() {
+            window.location.href = "products.html";
+        }
+
+        function goToServices() {
+            window.location.href = "services.html";
+        }
+
+        function goToContacts() {
+            window.location.href = "contacts.html";
+        }
+        function showDesignParagraphs() {
+            const designParagraphs = document.querySelector('.designdesp');
+            const articehtureParagraphs = document.querySelector('.articehturedesp');
+            const designservice = document.querySelector('.designservice');
+            const articehtureservice = document.querySelector('.articehtureservice');
+
+            designParagraphs.style.display = 'flex';
+            articehtureParagraphs.style.display = 'none';
+            designservice.style.display = 'flex';
+            articehtureservice.style.display = 'none';
+        }
+
+        function showArticehtureParagraphs() {
+            const designParagraphs = document.querySelector('.designdesp');
+            const articehtureParagraphs = document.querySelector('.articehturedesp');
+            const designservice = document.querySelector('.designservice');
+            const articehtureservice = document.querySelector('.articehtureservice');
+
+            designParagraphs.style.display = 'none';
+            articehtureParagraphs.style.display = 'flex';
+            designservice.style.display = 'none';
+            articehtureservice.style.display = 'flex';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const designParagraphs = document.querySelector('.designdesp');
+            const articehtureParagraphs = document.querySelector('.articehturedesp');
+            const designservice = document.querySelector('.designservice');
+            const steps = document.querySelectorAll('.stepview div');
+            const stepContainers = document.querySelectorAll('.stepcont > div');
+
+            const p1 = document.querySelector('.p1');
+            const p2 = document.querySelector('.p2');
+
+            p1.addEventListener('click', function () {
+                p1.style.opacity = '1';
+                p2.style.opacity = '0.1';
+                designParagraphs.style.display = 'flex';
+                articehtureParagraphs.style.display = 'none';
+            });
+
+            p2.addEventListener('click', function () {
+                p1.style.opacity = '0.1';
+                p2.style.opacity = '1';
+                designParagraphs.style.display = 'none';
+                articehtureParagraphs.style.display = 'flex';
+            });
+
+            let currentStep = 0;
+
+
+            document.querySelectorAll('.stepcont > div').forEach((stepContainer, index) => {
+                stepContainer.querySelector('.arrow-icon1').onclick = updateStep;
+                stepContainer.querySelector('.arrow-icon').onclick = prevStep;
+            });
+
+            function updateStep() {
+                // Önceki adımı gizle
+                stepContainers[currentStep].style.display = 'none';
+                steps[currentStep].style.backgroundColor = '';
+                steps[currentStep].querySelector('p').style.color = '';
+
+                // Yeni adımı göster
+                stepContainers[currentStep + 1].style.display = 'flex';
+                steps[currentStep + 1].style.backgroundColor = 'black';
+                steps[currentStep + 1].querySelector('p').style.color = 'white';
+
+                // Şu anki adımı güncelle
+                currentStep++;
+            }
+
+            function prevStep() {
+                // Önceki adımı gizle
+                stepContainers[currentStep].style.display = 'none';
+                steps[currentStep].style.backgroundColor = '';
+                steps[currentStep].querySelector('p').style.color = '';
+
+                // Yeni adımı göster
+                stepContainers[currentStep - 1].style.display = 'flex';
+                steps[currentStep - 1].style.backgroundColor = 'black';
+                steps[currentStep - 1].querySelector('p').style.color = 'white';
+
+                // Şu anki adımı güncelle
+                currentStep--;
+            }
+
+            steps.forEach((step, index) => {
+                step.addEventListener('click', function () {
+                    // Önceki adımı gizle
+                    stepContainers[currentStep].style.display = 'none';
+                    steps[currentStep].style.backgroundColor = 'white';
+                    steps[currentStep].querySelector('p').style.color = 'black';
+
+                    // Yeni adımı göster
+                    stepContainers[index].style.display = 'flex';
+                    steps[index].style.backgroundColor = 'black';
+                    steps[index].querySelector('p').style.color = 'white';
+
+                    // Şu anki adımı güncelle
+                    currentStep = index;
+                });
+            });
+
+            designParagraphs.style.display = 'flex';
+            articehtureParagraphs.style.display = 'none';
+            designservice.style.display = 'flex';
+
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            const countrySelect = document.getElementById("countrySelect");
+
+            function updatePhoneCode() {
+                const selectedCountryCode = countrySelect.value;
+                const selectedCountryPhoneCode = countryCodes[selectedCountryCode];
+                phoneNumberInput.value = selectedCountryPhoneCode;
+            }
+
+            updatePhoneCode();
+
+            setTimeout(() => {
+                document.querySelector('.left').classList.add('opened');
+                document.querySelector('.right').classList.add('opened');
+            }, 0);
+
+
+        });
+    </script>
+</body>
+
+</html>
