@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anarkh Interiors | Mimari Tasarım</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #fdfaf5;
+            --accent-color: #bc987e;
+            --dark-text: #3d3a37;
+            --soft-white: #ffffff;
+            --radius-xl: 40px;
+            --radius-md: 25px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGASYON (PROJELER.HTML ILE SENKRONIZE) --- */
+        .navbar { padding: 20px 5%; }
+        @media (min-width: 992px) { .navbar { padding: 40px 5%; } }
+        .navbar-brand { font-weight: 700; color: var(--accent-color) !important; font-size: 1.8rem; letter-spacing: -1px; }
+        .nav-link { color: var(--dark-text) !important; font-weight: 500; margin-left: 0; transition: 0.3s; }
+        @media (min-width: 992px) { .nav-link { margin-left: 30px; } }
+        .nav-link:hover { color: var(--accent-color) !important; transform: scale(1.05); }
+
+        /* Hamburger Menü Özelleştirme (İstediğin Değişiklik) */
+        .navbar-toggler { border: none; padding: 0; }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon { 
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(188, 152, 126, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        /* Butonlar */
+        .btn-anarkh {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-anarkh:hover { background-color: var(--dark-text); color: white; transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        /* Proje Kartları */
+        .project-card {
+            background: var(--soft-white);
+            border-radius: var(--radius-xl);
+            padding: 15px;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(188, 152, 126, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(188, 152, 126, 0.15); }
+
+        /* Sağdan Açılan Hover Paneli */
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            color: white;
+            z-index: 5;
+            transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: var(--radius-xl);
+        }
+        .project-card:hover .project-overlay { right: 0; }
+
+        .img-box { border-radius: var(--radius-md); overflow: hidden; height: 350px; position: relative; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; }
+
+        /* Modal Tasarımı */
+        .modal-content {
+            border-radius: var(--radius-xl);
+            border: none;
+            background-color: var(--bg-color);
+            overflow: hidden;
+        }
+        .modal-body { padding: 40px; position: relative; }
+        .btn-close-custom {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--dark-text);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            z-index: 100;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-close-custom:hover { background: var(--accent-color); transform: rotate(90deg); }
+        
+        .modal-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+        .tech-spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .spec-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(188, 152, 126, 0.1);
+        }
+        .spec-item strong { color: var(--accent-color); display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; }
+
+        /* Başlıklar */
+        h2.section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 50px; text-align: center; }
+        h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-color); margin: 15px auto; border-radius: 10px; }
+        
+        .badge-soft {
+            background: rgba(188, 152, 126, 0.1);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Hero Metin Fix */
+        @media (max-width: 768px) {
+            .display-3 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Anarkh Interiors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav pt-4 pt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projeler.html">Projeler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hizmetler.html">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5 text-center">
+        <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-8">
+                <span class="badge-soft mb-3">Yeni Nesil Mimari Yaklaşım</span>
+                <h1 class="display-3 fw-bold mb-4">Sade, Şık ve <br><span style="color: var(--accent-color)">Anlamlı Alanlar.</span></h1>
+                <p class="lead mb-5 opacity-75 px-3">Anarkh Interiors olarak, yaşam alanlarınızı sadece tasarlamıyor; hikayesi olan, karakterli ve fonksiyonel sanat eserlerine dönüştürüyoruz.</p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <a href="#projeler" class="btn-anarkh">Projelerimize Göz Atın</a>
+                    <a href="iletisim.html" class="btn btn-outline-dark rounded-pill px-4 py-3 fw-bold">Bizimle Tanışın</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5" id="projeler">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Mimari Portfolyomuz</h2>
+        </div>
+        <div class="row g-4" id="gallery"></div>
+    </section>
+
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal">×</button>
+                <div class="modal-body">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <img src="" id="modalImg" class="modal-img" alt="Proje">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="badge-soft mb-2 d-inline-block">Proje Künyesi</span>
+                            <h2 id="modalTitle" class="fw-bold mb-3"></h2>
+                            <p id="modalDesc" class="lead opacity-75 mb-4"></p>
+                            <div class="tech-spec-grid" id="modalSpecs"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5 text-center opacity-50">
+        <small>© 2026 Anarkh Interiors | Tasarım ve Mimarlık</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const projeler = [
+            { t: "Minimalist Oturma Odası", d: "Sakin ve ferah yaşam alanı tasarımı.", img: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4", specs: { konum: "Nişantaşı", alan: "45m²", malzeme: "Meşe Dokusu", stil: "Japandi" } },
+            { t: "Lüks Loft Mutfak", d: "Ham dokular ve yüksek teknolojili çözümler.", img: "https://images.unsplash.com/photo-1556912177-c54030639a67", specs: { konum: "Beşiktaş", alan: "32m²", malzeme: "Antrasit Lake", stil: "Modern Loft" } },
+            { t: "Endüstriyel Ofis", d: "Yaratıcılığı tetikleyen açık konsept.", img: "https://images.unsplash.com/photo-1497366216548-37526070297c", specs: { konum: "Karaköy", alan: "150m²", malzeme: "Brüt Beton", stil: "Industrial" } },
+            { t: "Zen Banyo Tasarımı", d: "Günlük ritüeller için huzurlu bir sığınak.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14", specs: { konum: "Bodrum", alan: "18m²", malzeme: "Traverten", stil: "Minimalist" } },
+            { t: "Nordic Yatak Odası", d: "Yumuşak ışık ve doğal tekstillerin uyumu.", img: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf", specs: { konum: "Zekeriyaköy", alan: "28m²", malzeme: "Keten ve Çam", stil: "Nordic" } },
+            { t: "Executive Toplantı Salonu", d: "Prestij ve konforun ön planda olduğu tasarım.", img: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407", specs: { konum: "Levent", alan: "60m²", malzeme: "Ceviz Kaplama", stil: "Kurumsal" } },
+            { t: "Bohem Teras Bahçesi", d: "Şehrin ortasında nefes alan dış mekan.", img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88", specs: { konum: "Kadıköy", alan: "40m²", malzeme: "Tik Ağacı", stil: "Boho-Chic" } },
+            { t: "Mermer Odaklı Antre", d: "Girişte etkileyici ve lüks bir karşılama.", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7", specs: { konum: "Etiler", alan: "15m²", malzeme: "Calacatta Mermer", stil: "Art Deco" } },
+            { t: "Modern Kütüphane", d: "Bilgiye açılan estetik bir kapı.", img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae", specs: { konum: "Çankaya", alan: "35m²", malzeme: "Koyu Meşe", stil: "Klasik Modern" } },
+            { t: "Butik Kafe İç Mekan", d: "Sosyal etkileşimi artıran sıcak dokular.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24", specs: { konum: "Alsancak", alan: "85m²", malzeme: "El Yapımı Tuğla", stil: "Retro" } },
+            { t: "Giyinme Odası", d: "Kişiye özel organizasyon ve zarafet.", img: "https://images.unsplash.com/photo-1558997519-83ec99032441", specs: { konum: "Göktürk", alan: "22m²", malzeme: "Cam ve Bronz", stil: "Luxury" } },
+            { t: "Çocuk Oyun Odası", d: "Eğlenceli ve güvenli gelişim alanı.", img: "https://images.unsplash.com/photo-1500628550463-c8881a54d4d4", specs: { konum: "Florya", alan: "30m²", malzeme: "Antibakteriyel", stil: "Renkli" } },
+            { t: "Lobi Lounge", d: "Konuklar için konforlu bekleme alanı.", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945", specs: { konum: "Antalya", alan: "200m²", malzeme: "Pirinç Detay", stil: "Contemporary" } },
+            { t: "Sanat Galerisi Aydınlatma", d: "Eserlerin ruhunu yansıtan ışık tasarımı.", img: "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8", specs: { konum: "Beyoğlu", alan: "300m²", malzeme: "Ray Spot", stil: "Minimal" } },
+            { t: "Yaz Evi Salonu", d: "Deniz ve güneşle bütünleşen mimari.", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750", specs: { konum: "Alaçatı", alan: "55m²", malzeme: "Alaçatı Taşı", stil: "Aegean" } }
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        projeler.forEach((p, index) => {
+            const card = `
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
+                    <div class="project-card">
+                        <div class="project-overlay">
+                            <h5 class="fw-bold mb-3">Hızlı Bakış</h5>
+                            <p class="small mb-4 opacity-75">${p.d}</p>
+                            <button class="btn btn-outline-light rounded-pill px-4" onclick="openDetails(${index})">Detaylı İncele</button>
+                        </div>
+                        <div class="img-box">
+                            <img src="${p.img}" alt="${p.t}" loading="lazy">
+                        </div>
+                        <div class="pt-4 px-2">
+                            <h4 class="fw-bold h5">${p.t}</h4>
+                            <p class="text-muted small">${p.d}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            gallery.innerHTML += card;
+        });
+
+        function openDetails(id) {
+            const p = projeler[id];
+            document.getElementById('modalTitle').innerText = p.t;
+            document.getElementById('modalDesc').innerText = p.d;
+            document.getElementById('modalImg').src = p.img;
+            
+            const specsHtml = `
+                <div class="spec-item"><strong>Konum</strong>${p.specs.konum}</div>
+                <div class="spec-item"><strong>Alan</strong>${p.specs.alan}</div>
+                <div class="spec-item"><strong>Malzeme</strong>${p.specs.malzeme}</div>
+                <div class="spec-item"><strong>Stil</strong>${p.specs.stil}</div>
+            `;
+            document.getElementById('modalSpecs').innerHTML = specsHtml;
+            new bootstrap.Modal(document.getElementById('projectModal')).show();
+        }
+    </script>
+</body>
+</html>

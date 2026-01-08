@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Anarkh Interiors</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #fdfaf5; 
+            --accent-color: #bc987e; 
+            --dark-text: #3d3a37;
+            --soft-white: #ffffff;
+            --radius-lg: 35px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* Navbar (Diğer sayfalarla senkron) */
+        .navbar { padding: 20px 5%; }
+        @media (min-width: 992px) {
+            .navbar { padding: 30px 5%; }
+        }
+        .navbar-brand { font-weight: 700; color: var(--accent-color) !important; font-size: 1.8rem; }
+        .nav-link { color: var(--dark-text) !important; font-weight: 500; margin-left: 0; transition: 0.3s; }
+        @media (min-width: 992px) {
+            .nav-link { margin-left: 25px; }
+        }
+        .nav-link:hover, .nav-link.active { color: var(--accent-color) !important; }
+
+        /* Hamburger Menü */
+        .navbar-toggler { border: none; padding: 0; }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon { 
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(188, 152, 126, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hizmet Kartları */
+        .service-icon-box {
+            width: 80px; height: 80px;
+            background: rgba(188, 152, 126, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            font-size: 2rem;
+            transition: 0.4s;
+        }
+
+        .service-card {
+            background: var(--soft-white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: none;
+            transition: 0.4s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(188, 152, 126, 0.1);
+        }
+        .service-card:hover .service-icon-box {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Fiyatlandırma Paketleri */
+        .pricing-card {
+            background: var(--soft-white);
+            border-radius: var(--radius-lg);
+            padding: 50px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            height: 100%;
+        }
+
+        @media (min-width: 992px) {
+            .pricing-card.featured {
+                border-color: var(--accent-color);
+                transform: scale(1.05);
+                z-index: 2;
+            }
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--dark-text);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .btn-package {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn-package:hover {
+            background: var(--dark-text);
+            color: white;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .display-4 { font-size: 2.2rem; }
+            .pricing-card.featured { border-color: var(--accent-color); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Anarkh Interiors</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav pt-4 pt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projeler.html">Projeler</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hizmetler.html">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5 text-center" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">Neler Yapıyoruz?</h1>
+        <p class="text-muted lead px-3">Mimari disiplin, sanatsal bakış açısıyla buluşuyor.</p>
+    </section>
+
+    <section class="container py-4">
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card text-center">
+                    <div class="service-icon-box mx-auto">✎</div>
+                    <h4 class="fw-bold">Konsept Tasarım</h4>
+                    <p class="text-muted small">Mekan analizi, moodboard oluşturma ve ilk eskizlerin dijital ortama aktarılması.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card text-center">
+                    <div class="service-icon-box mx-auto">📐</div>
+                    <h4 class="fw-bold">Teknik Projelendirme</h4>
+                    <p class="text-muted small">Elektrik, tesisat ve detay uygulama paftalarının profesyonelce hazırlanması.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card text-center">
+                    <div class="service-icon-box mx-auto">🏠</div>
+                    <h4 class="fw-bold">Şantiye Yönetimi</h4>
+                    <p class="text-muted small">Tasarımın gerçeğe dönüşme sürecinde tam saha denetimi ve ekip yönetimi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Tasarım Paketleri</h2>
+            <p class="text-muted">İhtiyacınıza en uygun çalışma modelini seçin.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-card">
+                    <h3 class="fw-bold h5">Konsept Paket</h3>
+                    <div class="price-value">₺15k<small class="fs-6 text-muted">/Oda</small></div>
+                    <ul class="feature-list">
+                        <li>2D Yerleşim Planı</li>
+                        <li>Moodboard & Malzeme Seçimi</li>
+                        <li>3 Adet Render Görseli</li>
+                        <li>1 Adet Revizyon Hakkı</li>
+                        <li>Mobilya Seçki Listesi</li>
+                    </ul>
+                    <a href="#" class="btn-package">Bilgi Al</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card featured">
+                    <div class="badge bg-warning text-dark mb-3 rounded-pill p-2 px-3 fw-bold">EN ÇOK TERCİH EDİLEN</div>
+                    <h3 class="fw-bold h5">Premium Paket</h3>
+                    <div class="price-value">₺35k<small class="fs-6 text-muted">/Oda</small></div>
+                    <ul class="feature-list">
+                        <li>Detaylı 3D Modelleme</li>
+                        <li>Fotorealistik Render (8 Adet)</li>
+                        <li>Teknik Uygulama Çizimleri</li>
+                        <li>Aydınlatma ve Tesisat Planı</li>
+                        <li>3 Adet Revizyon Hakkı</li>
+                        <li>Saha Danışmanlığı (Online)</li>
+                    </ul>
+                    <a href="#" class="btn-package">Hemen Başla</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="pricing-card">
+                    <h3 class="fw-bold h5">Anahtar Teslim</h3>
+                    <div class="price-value">Teklif<small class="fs-6 text-muted">/Proje</small></div>
+                    <ul class="feature-list">
+                        <li>Tüm Mimari Süreç Yönetimi</li>
+                        <li>Malzeme Tedarik ve Satın Alma</li>
+                        <li>Şantiye Ekibi ve Uygulama</li>
+                        <li>Özel Mobilya İmalat Takibi</li>
+                        <li>Sınırsız Revizyon Hakkı</li>
+                        <li>Styling ve Dekorasyon</li>
+                    </ul>
+                    <a href="#" class="btn-package">Teklif İste</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 mt-5 text-center opacity-50">
+        <small>© 2026 Anarkh Interiors | Her detayda bir hikaye var.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
